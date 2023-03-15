@@ -69,7 +69,10 @@ class Auction():
             if index == max_bidder:
                 if ad_clicked:
                     self.balances[index] += 1
+                self.balances[index] -= winning_price
                 bidder.notify(True, winning_price, ad_clicked)
             else:
                 bidder.notify(False, winning_price, None)
+                
+            
 
