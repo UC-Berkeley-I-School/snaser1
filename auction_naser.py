@@ -32,9 +32,10 @@ class Auction():
             self.balances[bidder]= 0
 
     def execute_round(self):
+      #special case: the bidder is less than 2
         if len(self.bidders) < 2:
             return
-        #create a local dictionary to hold the bid values
+        #created a local dictionary to hold the bid values
         bidder_dict = {i: 0 for i in range(len(self.bidders))}
         user = random.choice(self.users)
         user_id = self.users.index(user)
@@ -43,10 +44,10 @@ class Auction():
             value = bidder.bid(user_id)
             bidder_dict[index] = value
 
-        #create a list based on dict.values for sorting
+        #created a list based on dict.values for sorting
         value_list = list(bidder_dict.values())
         
-        #sort the list and argsort the index, in this case
+        #sorted the list and argsort the index, in this case
         #the list contains the bit and the index is the bidder number  
         bidder_list = np.argsort(value_list).tolist()
         value_list = sorted(value_list)
