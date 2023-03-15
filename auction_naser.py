@@ -32,6 +32,8 @@ class Auction():
             self.balances[bidder]= 0
 
     def execute_round(self):
+        if len(self.bidders) < 2:
+            return
         #create a local dictionary to hold the bid values
         bidder_dict = {i: 0 for i in range(len(self.bidders))}
         user = random.choice(self.users)
