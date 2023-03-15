@@ -38,7 +38,7 @@ class Auction():
         user_id = self.users.index(user)
 
         for index, bidder in enumerate(self.bidders):
-            value = bidder.bid()
+            value = bidder.bid(user_id)
             bidder_dict[index] = value
 
         #create a list based on dict.values for sorting
