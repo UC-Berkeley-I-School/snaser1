@@ -74,6 +74,6 @@ class Auction():
                 self.balances[index] -= winning_price
                 bidder.notify(True, winning_price, ad_clicked)
             else:
-                bidder.notify(False, winning_price)
+                bidder.notify(False, winning_price, None)
 
 
